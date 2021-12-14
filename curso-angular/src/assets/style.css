@@ -1,0 +1,10 @@
+.blueBorder {
+    border: 5px solid cornflowerblue !important;
+}
+.blueBackground {
+    background-color: #6495ed;
+}
+.router-link-active {
+    font-weight: bold;
+    background-color: yellow;
+}
