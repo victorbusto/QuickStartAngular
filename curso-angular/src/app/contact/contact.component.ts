@@ -21,5 +21,6 @@ export class ContactComponent {
     }
 
     redirectHome(){
-        this._router.navigate(['/home'])}
+        this._router.navigate(['/home']);
+    }
 }

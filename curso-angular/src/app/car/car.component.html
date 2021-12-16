@@ -1,0 +1,38 @@
+<h2>Componente de coches</h2>
+
+<form #formCar="ngForm" (ngSubmit)="onSubmit(); formCar.reset()">
+    <p>
+        <label>Nombre:</label>
+        <input type="text" name="name" #name="ngModel" [(ngModel)]="car.name" required>
+        <span *ngIf="name.touched && !name.valid">
+            El nombre del coche es incorrecto
+        </span>
+    </p>
+
+    <p>
+        <label>Potencia:</label>
+        <input type="number"  name="power" #power="ngModel" [(ngModel)]="car.power" required pattern="[0-9]+">
+        <span *ngIf="power.touched && !power.valid">
+            La potencia es incorrecta
+        </span>
+    </p>
+
+    <p>
+        <label>Color:</label>
+        <input type="text"  name="color" #color="ngModel" [(ngModel)]="car.color" required>
+        <span *ngIf="color.touched && !color.valid">
+            El color es incorrecto
+        </span>
+    </p>
+
+    <input type="submit" value="Guardar" [disabled]="!formCar.form.valid">
+</form>
+
+<div>
+    <h4>Listado coches</h4>
+    <ul>
+        <li *ngFor="let car of cars">
+            {{car.name}} - {{car.power}} - {{car.color}}
+        </li>
+    </ul>
+</div>
